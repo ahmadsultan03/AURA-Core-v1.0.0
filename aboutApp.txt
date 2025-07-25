@@ -1,0 +1,107 @@
+📘 AURA-Core v1.0.0 Documentation Report
+
+🧠 Overview
+AURA (Artificial Understanding & Response Assistant) is a Python-based voice assistant powered by Natural Language Processing (NLP) and deep learning. It interprets and responds to user commands using a trained neural network model. AURA supports tasks such as speech recognition, text-to-speech, web automation, and system-level control.
+
+📁 Project Structure
+
+
+AURA-Core v1.0.0/
+├── __pycache__/
+├── chat_model.h5                # Trained neural network model
+├── intents.json                 # Intents and responses dataset
+├── label_encoder.pkl           # Encoded target labels
+├── tokenizer.pkl               # Word tokenizer for input processing
+├── main.py                     # Main voice assistant runtime
+├── model_train.py              # Training script for the neural model
+├── model_test.py               # Script to test model responses
+├── tempCodeRunnerFile.py       # Temporary runtime file (optional)
+
+🧩 Components Breakdown
+
+1. Natural Language Understanding (NLU)
+
+intents.json: Defines user intents and their corresponding responses.
+
+
+Tokenizer & LabelEncoder:
+
+Tokenizer: Converts text to numerical sequences.
+LabelEncoder: Encodes intent labels into integers.
+
+
+Model Architecture:
+
+Sequential model with:
+Embedding layer
+GlobalAveragePooling1D
+Dense layers
+Loss function: SparseCategoricalCrossentropy
+
+
+2. Model Training & Testing
+
+model_train.py:
+Loads data from intents.json
+Tokenizes inputs and encodes outputs
+
+Trains the model and saves:
+chat_model.h5
+tokenizer.pkl
+label_encoder.pkl
+
+model_test.py:
+Loads the trained model
+Takes user input and returns predicted intent and response
+
+
+3. Voice Interaction
+
+Speech Recognition:
+Powered by speech_recognition to capture audio input.
+
+Text-to-Speech (TTS):
+Uses pyttsx3 for offline TTS output.
+
+Processing Flow:
+Convert speech → text
+Predict intent using model
+Respond with a matched output using TTS
+
+
+4. System Automation
+
+Capabilities include:
+Opening web pages (webbrowser)
+Simulating keystrokes and mouse actions (pyautogui)
+Retrieving system information (psutil)
+Running system commands (subprocess)
+
+
+🛠️ Dependencies
+Ensure the following packages are installed:
+
+pip install numpy tensorflow scikit-learn pyttsx3 SpeechRecognition psutil pyautogui
+
+🚀 Running the Assistant
+Train the model (if not yet trained):
+python model_train.py
+
+Start the assistant:
+
+python main.py
+
+
+🔍 Future Enhancements
+
+Contextual conversation handling
+Integration with APIs (e.g., weather, reminders)
+Use of advanced models like BERT or GPT for better NLP
+GUI or web-based control interface
+
+
+👤 Author
+
+Muhammad Ahmad Sultan
+Creator of AURA - Artificial Understanding & Response Assistant
+Version: v1.0.0
