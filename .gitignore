@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+venv/
+env/
+.venv/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Model and serialized files
+chat_model.h5
+tokenizer.pkl
+label_encoder.pkl
+
+# Temporary or test files
+tempCodeRunnerFile.py
+
+# VS Code and other IDE settings
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs and runtime files
+*.log
+*.tmp
