@@ -124,7 +124,24 @@ def social_media(command):
     else:
         speak("Sorry, I couldn't identify the social media platform.")
 
+def get_schedule_for_day(day):
+    week = {
+        "monday": "Hey Buddy! Ready to kick off the week? You’ve got Human-Computer Interaction from 9:00 to 9:50, then it’s Software Quality Engineering from 10:00 to 11:50. Enjoy a well-deserved break from 12:00 to 2:00, and later, dive into Information Retrieval Lab from 2:00 onwards!",
+        "tuesday": "Good morning, Boss! First up, Formal Methods from 9:00 to 9:50, followed by a short seminar break from 10:00 to 10:50. From 11:00 to 12:50, you’ll be tackling Software Project Management, then take a quick Duhr Prayer break. Wrap up with your Human-Computer Interaction lab at 2:00 PM.",
+        "wednesday": "Hey Buddy, it’s a busy one today! Start your day with Machine Learning from 9:00 to 10:50, then Entrepreneurship class from 11:00 to 11:50. At 12:00, it’s Software Project Management for an hour, followed by a Duhr Prayer break at 1:00. Finish strong with the Software Quality Engineering workshop from 2:00 PM onwards.",
+        "thursday": "Good vibes for Thursday, Boss! Begin with Information Retrieval from 9:00 to 10:50, then get into Software Project Management from 11:00 to 12:50. Take your Duhr Prayer break at 1:00, and dive into Formal Methods at 2:00 PM for your final class of the day.",
+        "friday": "It’s Friday, Buddy! Start with Entrepreneurship from 9:00 to 9:50, then dive into Software Quality Engineering at 10:00 to 10:50. From 11:00 to 12:50, it’s Machine Learning class, followed by your Jumma Prayer break at 1:00. Finish the day with a productive Machine Learning Lab from 2:00 PM.",
+        "saturday": "It’s a more relaxed day, Boss! You’ve got team meetings for your Final Year Project from 9:00 to 11:50, then the rest of the day is yours to chill or catch up on work. Take it easy!",
+        "sunday": "Happy Sunday, Buddy! It’s a holiday today, but why not use this time to catch up on readings or projects? Stay ahead on those deadlines, and enjoy the downtime!"
+    }
+    return week.get(day, "Oops! Something went wrong. Please check the day and try again.")
 
+
+def schedule():
+    day = calc_day().lower()  # assuming calc_day() gives current day in string format
+    # speak("Boss today's schedule is ")
+    schedule_message = get_schedule_for_day(day)
+    speak(schedule_message)
 
 if __name__ == "__main__":
     # greetings()
@@ -135,6 +152,10 @@ if __name__ == "__main__":
             ('youtube' in query) or ('linkedin' in query) or ('tiktok' in query) or ('twitter' in query) or \
             ('snapchat' in query) or ('reddit' in query) or ('telegram' in query):
         social_media(query)
+    elif ("university time table" in query) or ("schedule" in query):
+        schedule()
+    else:
+        speak("Sorry, I did not understand the command.")
 
 
 
