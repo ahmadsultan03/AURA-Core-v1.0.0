@@ -157,7 +157,13 @@ if __name__ == "__main__":
         schedule()
     elif("volume up" in query) or ("increase volume" in query):
         pyautogui.press("volumeup")
-        speak("Volume increased.")
+        speak("Volume increased")
+    elif ("volume down" in query) or ("decrease volume" in query):
+        pyautogui.press("volumedown")
+        speak("Volume decreased")
+    elif ("volume mute" in query) or ("mute the sound" in query) or ("mute" in query):
+        pyautogui.press("volumemute")
+        speak("Volume muted")
 
     else:
         speak("Sorry, I did not understand the command.")
