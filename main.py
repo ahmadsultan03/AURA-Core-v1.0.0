@@ -191,9 +191,9 @@ def openApp(command):
         speak("Opening Settings...")
         os.startfile('ms-settings:')
 
-    elif "vlc" in command or "video player" in command:
-        speak("Opening Video and Media Player...")
-        os.startfile('C:\\Program Files\\DAUM\\PotPlayer\\PotPlayerMini64.exe')
+    elif "camera" in command or "cam" in command:
+        speak("Opening Camera...")
+        os.startfile('C:\\Program Files\\WindowsApps\\Microsoft.WindowsCamera_2025.2505.2.0_x64__8wekyb3d8bbwe\\WindowsCamera.exe')
 
     elif "zoom" in command:
         speak("Opening Zoom...")
@@ -232,7 +232,7 @@ def closeApp(command):
         "explorer": 'explorer.exe',
         "cmd": 'cmd.exe',
         "settings": 'ms-settings:',
-        "vlc": 'PotPlayerMini64.exe',
+        "camera": 'WindowsCamera.exe',
         "zoom": 'Zoom.exe',
         "vs code": 'Code.exe',
         "pycharm": 'pycharm64.exe',
@@ -289,7 +289,7 @@ if __name__ == "__main__":
     elif ("open calculator" in query) or ("open notepad" in query) or ("open paint" in query) or (
             "open word" in query) or ("open excel" in query) or ("open browser" in query) or (
             "open opera" in query) or ("open explorer" in query) or ("open cmd" in query) or (
-            "open settings" in query) or ("open video player" in query) or ("open camera" in query) or (
+            "open settings" in query) or ("open camera" in query) or ("open camera" in query) or (
             "open zoom" in query) or ("open vs code" in query) or ("open pycharm" in query) or (
             "open whatsapp app" in query) or ("open chatgpt app" in query):
         openApp(query)
