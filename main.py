@@ -3,6 +3,8 @@
 import datetime
 import time
 import webbrowser
+import sys
+import os
 import pyautogui
 import pyttsx3                    # For converting text to speech
 import speech_recognition as sr   # For converting speech to text
@@ -95,7 +97,7 @@ def social_media(command):
     elif 'discord' in command:
         speak("Taking you to Discord...")
         webbrowser.open("https://discord.com/")
-    elif 'whatsapp' in command:
+    elif 'whatsapp web' in command:
         speak("Taking you to WhatsApp Web...")
         webbrowser.open("https://web.whatsapp.com/")
     elif 'instagram' in command:
@@ -119,9 +121,9 @@ def social_media(command):
     elif 'reddit' in command:
         speak("Taking you to Reddit...")
         webbrowser.open("https://www.reddit.com/")
-    elif 'telegram' in command:
-        speak("Taking you to Telegram Web...")
-        webbrowser.open("https://web.telegram.org/")
+    elif 'chatgpt web' in command:
+        speak("Taking you to ChatGPT Web...")
+        webbrowser.open("https://chatgpt.com/")
     else:
         speak("Sorry, I couldn't identify the social media platform.")
 
@@ -144,14 +146,87 @@ def schedule():
     schedule_message = get_schedule_for_day(day)
     speak(schedule_message)
 
+
+def openApp(command):
+    if "calculator" in command:
+        speak("Opening Calculator...")
+        os.startfile('C:\\Windows\\System32\\calc.exe')
+
+    elif "notepad" in command:
+        speak("Opening Notepad...")
+        os.startfile('C:\\Windows\\System32\\notepad.exe')
+
+    elif "paint" in command:
+        speak("Opening Paint...")
+        os.startfile('C:\\Windows\\System32\\mspaint.exe')
+
+    elif "word" in command or "microsoft word" in command:
+        speak("Opening Microsoft Word...")
+        os.startfile(
+            'C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE')
+
+    elif "excel" in command or "microsoft excel" in command:
+        speak("Opening Microsoft Excel...")
+        os.startfile(
+            'C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE')
+
+    elif "browser" in command or "chrome" in command:
+        speak("Opening Google Chrome...")
+        os.startfile('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')
+
+    elif "opera" in command:
+        speak("Opening Opera GX Browser...")
+        os.startfile('C:\\Users\\mahma\\AppData\\Local\\Programs\\Opera GX\\opera.exe')
+
+    elif "explorer" in command or "file explorer" in command:
+        speak("Opening File Explorer...")
+        os.startfile('C:\\Windows\\explorer.exe')
+
+    elif "cmd" in command or "command prompt" in command:
+        speak("Opening Command Prompt...")
+        os.startfile('C:\\Windows\\System32\\cmd.exe')
+
+    elif "settings" in command:
+        speak("Opening Settings...")
+        os.startfile('ms-settings:')
+
+    elif "vlc" in command or "video player" in command:
+        speak("Opening Video and Media Player...")
+        os.startfile('C:\\Program Files\\DAUM\\PotPlayer\\PotPlayerMini64.exe')
+
+    elif "zoom" in command:
+        speak("Opening Zoom...")
+        os.startfile('C:\\Users\\mahma\\AppData\\Roaming\\Zoom\\bin\\Zoom.exe')
+
+    elif "vs code" in command or "visual studio code" in command:
+        speak("Opening Visual Studio Code...")
+        os.startfile(
+            'C:\\Users\\<username>\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe')
+
+    elif "pycharm" in command or "python ide" in command:
+        speak("Opening PyCharm IDE...")
+        os.startfile('D:\\myStudy\\PyCharm\\PyCharm Community Edition 2025.1.2\\bin\\pycharm64.exe')
+
+    elif "whatsapp app" in command:
+        speak("Opening WhatsApp App...")
+        os.startfile('C:\\Program Files\\WindowsApps\\5319275A.WhatsAppDesktop_2.2528.4.0_x64__cv1g1gvanyjgm\\WhatsApp.exe')
+
+    elif "chatgpt app" in command:
+        speak("Opening ChatGPT App...")
+        os.startfile('C:\\Program Files\\WindowsApps\\OpenAI.ChatGPT-Desktop_1.2025.202.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe')
+
+    else:
+        speak("Sorry, I don't recognize that command.")
+
+
 if __name__ == "__main__":
     # greetings()
     # while True:
         # query = command().lower()
     query = input("Enter your command -> ").lower()
-    if ('facebook' in query) or ('discord' in query) or ('whatsapp' in query) or ('instagram' in query) or \
+    if ('facebook' in query) or ('discord' in query) or ('whatsapp web' in query) or ('instagram' in query) or \
             ('youtube' in query) or ('linkedin' in query) or ('tiktok' in query) or ('twitter' in query) or \
-            ('snapchat' in query) or ('reddit' in query) or ('telegram' in query):
+            ('snapchat' in query) or ('reddit' in query) or ('chatgpt web' in query):
         social_media(query)
     elif ("university time table" in query) or ("schedule" in query):
         schedule()
@@ -164,6 +239,16 @@ if __name__ == "__main__":
     elif ("volume mute" in query) or ("mute the sound" in query) or ("mute" in query):
         pyautogui.press("volumemute")
         speak("Volume muted")
+    elif ("open calculator" in query) or ("open notepad" in query) or ("open paint" in query) or (
+            "open word" in query) or ("open excel" in query) or ("open browser" in query) or (
+            "open opera" in query) or ("open explorer" in query) or ("open cmd" in query) or (
+            "open settings" in query) or ("open video player" in query) or ("open camera" in query) or (
+            "open zoom" in query) or ("open vs code" in query) or ("open pycharm" in query) or (
+            "open whatsapp app" in query) or ("open chatgpt app" in query):
+        openApp(query)
+
+    elif "exit" in query:
+        sys.exit()
 
     else:
         speak("Sorry, I did not understand the command.")
