@@ -4,6 +4,7 @@ pyaudio
 datetime
 time
 webbrowser
+pyautogui
 
 
 
