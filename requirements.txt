@@ -2,6 +2,8 @@ pyttsx3
 SpeechRecognition
 pyaudio
 datetime
+time
+webbrowser
 
 
 

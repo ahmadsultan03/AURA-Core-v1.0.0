@@ -2,6 +2,7 @@
 
 import datetime
 import time
+import webbrowser
 import pyttsx3                    # For converting text to speech
 import speech_recognition as sr   # For converting speech to text
 
@@ -68,7 +69,7 @@ def calc_day():
     }
     if day in day_dict.keys():
         day_of_week = day_dict[day]
-        print(day_of_week)
+        # print(day_of_week)
     return day_of_week
 
 def greetings():
@@ -86,12 +87,54 @@ def greetings():
         speak(f"Good night Ahmad, it's {day} and the time is {t}")
 
 
+def social_media(command):
+    if 'facebook' in command:
+        speak("Taking you to Facebook...")
+        webbrowser.open("https://www.facebook.com/")
+    elif 'discord' in command:
+        speak("Taking you to Discord...")
+        webbrowser.open("https://discord.com/")
+    elif 'whatsapp' in command:
+        speak("Taking you to WhatsApp Web...")
+        webbrowser.open("https://web.whatsapp.com/")
+    elif 'instagram' in command:
+        speak("Taking you to Instagram...")
+        webbrowser.open("https://www.instagram.com/")
+    elif 'youtube' in command:
+        speak("Taking you to YouTube...")
+        webbrowser.open("https://www.youtube.com/")
+    elif 'linkedin' in command:
+        speak("Taking you to LinkedIn...")
+        webbrowser.open("https://www.linkedin.com/")
+    elif 'tiktok' in command:
+        speak("Taking you to TikTok...")
+        webbrowser.open("https://www.tiktok.com/")
+    elif 'twitter' in command:
+        speak("Taking you to Twitter...")
+        webbrowser.open("https://x.com/")
+    elif 'snapchat' in command:
+        speak("Taking you to Snapchat...")
+        webbrowser.open("https://www.snapchat.com/")
+    elif 'reddit' in command:
+        speak("Taking you to Reddit...")
+        webbrowser.open("https://www.reddit.com/")
+    elif 'telegram' in command:
+        speak("Taking you to Telegram Web...")
+        webbrowser.open("https://web.telegram.org/")
+    else:
+        speak("Sorry, I couldn't identify the social media platform.")
+
+
+
 if __name__ == "__main__":
-    greetings()
+    # greetings()
     # while True:
         # query = command().lower()
-        # query = input("Enter your command -> ")
-
+    query = input("Enter your command -> ").lower()
+    if ('facebook' in query) or ('discord' in query) or ('whatsapp' in query) or ('instagram' in query) or \
+            ('youtube' in query) or ('linkedin' in query) or ('tiktok' in query) or ('twitter' in query) or \
+            ('snapchat' in query) or ('reddit' in query) or ('telegram' in query):
+        social_media(query)
 
 
 
