@@ -7,5 +7,7 @@ webbrowser
 pyautogui
 sys
 os
+psutil
+
 
 
