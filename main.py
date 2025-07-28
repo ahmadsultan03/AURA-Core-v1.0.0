@@ -1,5 +1,7 @@
 # copyrights © Muhammad Ahmad Sultan
 
+import datetime
+import time
 import pyttsx3                    # For converting text to speech
 import speech_recognition as sr   # For converting speech to text
 
@@ -53,10 +55,45 @@ def command():
 
         return query
 
+def calc_day():
+    day = datetime.datetime.today().weekday()+1
+    day_dict={
+        1:"Monday",
+        2:"Tuesday",
+        3:"Wednesday",
+        4:"Thursday",
+        5:"Friday",
+        6:"Saturday",
+        7:"Sunday"
+    }
+    if day in day_dict.keys():
+        day_of_week = day_dict[day]
+        print(day_of_week)
+    return day_of_week
+
+def greetings():
+    hour = int(datetime.datetime.now().hour)
+    t = time.strftime("%I:%M:%p")
+    day = calc_day()
+
+    if (hour >= 5) and (hour < 12) and ('AM' in t):
+        speak(f"Good morning Ahmad, it's {day} and the time is {t}")
+    elif (hour >= 12) and (hour < 17) and ('PM' in t):
+        speak(f"Good afternoon Ahmad, it's {day} and the time is {t}")
+    elif (hour >= 17) and (hour < 21) and ('PM' in t):
+        speak(f"Good evening Ahmad, it's {day} and the time is {t}")
+    else:
+        speak(f"Good night Ahmad, it's {day} and the time is {t}")
+
+
 if __name__ == "__main__":
-    while True:
-        query = command().lower()
-        print(query)
+    greetings()
+    # while True:
+        # query = command().lower()
+        # query = input("Enter your command -> ")
+
+
+
 
 # Example usage
 # speak("Hi! I’m AURA. Standing by for your commands.")
