@@ -3,6 +3,7 @@
 import datetime
 import time
 import webbrowser
+import pyautogui
 import pyttsx3                    # For converting text to speech
 import speech_recognition as sr   # For converting speech to text
 
@@ -154,6 +155,10 @@ if __name__ == "__main__":
         social_media(query)
     elif ("university time table" in query) or ("schedule" in query):
         schedule()
+    elif("volume up" in query) or ("increase volume" in query):
+        pyautogui.press("volumeup")
+        speak("Volume increased.")
+
     else:
         speak("Sorry, I did not understand the command.")
 
