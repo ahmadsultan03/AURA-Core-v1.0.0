@@ -5,6 +5,7 @@ import time
 import webbrowser
 import sys
 import os
+import psutil
 import pyautogui
 import pyttsx3                    # For converting text to speech
 import speech_recognition as sr   # For converting speech to text
@@ -218,6 +219,47 @@ def openApp(command):
     else:
         speak("Sorry, I don't recognize that command.")
 
+def closeApp(command):
+    # Define a list of applications and their executable names
+    app_paths = {
+        "calculator": 'calc.exe',
+        "notepad": 'notepad.exe',
+        "paint": 'mspaint.exe',
+        "word": 'WINWORD.EXE',
+        "excel": 'EXCEL.EXE',
+        "browser": 'chrome.exe',
+        "opera": 'opera.exe',
+        "explorer": 'explorer.exe',
+        "cmd": 'cmd.exe',
+        "settings": 'ms-settings:',
+        "vlc": 'PotPlayerMini64.exe',
+        "zoom": 'Zoom.exe',
+        "vs code": 'Code.exe',
+        "pycharm": 'pycharm64.exe',
+        "whatsapp app": 'WhatsApp.exe',
+        "chatgpt app": 'ChatGPT.exe'
+    }
+
+    # Find and terminate the process if it is running
+    for app_name, exe_name in app_paths.items():
+        if app_name in command:
+            speak(f"Closing {app_name}...")
+
+            # Check for the process and terminate it
+            for proc in psutil.process_iter(['pid', 'name']):
+                if exe_name.lower() in proc.info['name'].lower():
+                    try:
+                        proc.terminate()  # Terminate the process
+                        speak(f"{app_name} closed successfully.")
+                    except psutil.NoSuchProcess:
+                        speak(f"Could not close {app_name}, process not found.")
+                    break
+            else:
+                speak(f"{app_name} is not running.")
+            return
+
+    speak("Sorry, I don't recognize that command to close.")
+
 
 if __name__ == "__main__":
     # greetings()
@@ -228,17 +270,22 @@ if __name__ == "__main__":
             ('youtube' in query) or ('linkedin' in query) or ('tiktok' in query) or ('twitter' in query) or \
             ('snapchat' in query) or ('reddit' in query) or ('chatgpt web' in query):
         social_media(query)
+
     elif ("university time table" in query) or ("schedule" in query):
         schedule()
+
     elif("volume up" in query) or ("increase volume" in query):
         pyautogui.press("volumeup")
         speak("Volume increased")
+
     elif ("volume down" in query) or ("decrease volume" in query):
         pyautogui.press("volumedown")
         speak("Volume decreased")
+
     elif ("volume mute" in query) or ("mute the sound" in query) or ("mute" in query):
         pyautogui.press("volumemute")
         speak("Volume muted")
+
     elif ("open calculator" in query) or ("open notepad" in query) or ("open paint" in query) or (
             "open word" in query) or ("open excel" in query) or ("open browser" in query) or (
             "open opera" in query) or ("open explorer" in query) or ("open cmd" in query) or (
@@ -246,6 +293,15 @@ if __name__ == "__main__":
             "open zoom" in query) or ("open vs code" in query) or ("open pycharm" in query) or (
             "open whatsapp app" in query) or ("open chatgpt app" in query):
         openApp(query)
+
+    elif ("close calculator" in query) or ("close notepad" in query) or ("close paint" in query) or (
+            "close word" in query) or ("close excel" in query) or ("close browser" in query) or (
+            "close opera" in query) or ("close explorer" in query) or ("close cmd" in query) or (
+            "close settings" in query) or ("close video player" in query) or ("close camera" in query) or (
+            "close zoom" in query) or ("close vs code" in query) or ("close pycharm" in query) or (
+            "close whatsapp app" in query) or ("close chatgpt app" in query):
+        closeApp(query)
+
 
     elif "exit" in query:
         sys.exit()
