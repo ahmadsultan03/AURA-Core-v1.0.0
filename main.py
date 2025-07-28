@@ -158,7 +158,7 @@ def openApp(command):
 
     elif "paint" in command:
         speak("Opening Paint...")
-        os.startfile('C:\\Windows\\System32\\mspaint.exe')
+        os.startfile('C:\\Program Files\\WindowsApps\\Microsoft.Paint_11.2504.551.0_x64__8wekyb3d8bbwe\\PaintApp\\mspaint.exe')
 
     elif "word" in command or "microsoft word" in command:
         speak("Opening Microsoft Word...")
@@ -201,7 +201,7 @@ def openApp(command):
     elif "vs code" in command or "visual studio code" in command:
         speak("Opening Visual Studio Code...")
         os.startfile(
-            'C:\\Users\\<username>\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe')
+            'C:\\Users\\mahma\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe')
 
     elif "pycharm" in command or "python ide" in command:
         speak("Opening PyCharm IDE...")
