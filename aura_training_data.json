@@ -1,0 +1,1075 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi there",
+                "How are you",
+                "Is anyone there?",
+                "Hey",
+                "Hola",
+                "Hello",
+                "Good day",
+                "Assalam u Alaikum",
+                "Salam",
+                "Merhaba",
+                "Hallo",
+                "Good morning",
+                "Good afternoon",
+                "Good evening",
+                "Greetings",
+                "Howdy",
+                "What's up",
+                "Hi AURA",
+                "Hello AURA",
+                "Wake up",
+                "Are you there",
+                "Start",
+                "Begin"
+            ],
+            "responses": [
+                "Hello! I'm AURA, your virtual assistant. How can I help you today?",
+                "Hi there! Ready to assist you with anything you need.",
+                "Good to see you! What can I do for you?",
+                "Hello! I'm here and ready to help.",
+                "Greetings! How may I assist you today?"
+            ],
+            "context": ["greeting"]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Bye",
+                "See you later",
+                "Goodbye",
+                "Get lost",
+                "Till next time",
+                "bbye",
+                "Farewell",
+                "Take care",
+                "Catch you later",
+                "Peace out",
+                "I'm leaving",
+                "Gotta go",
+                "See ya",
+                "Later",
+                "Exit",
+                "Quit",
+                "End conversation",
+                "Stop"
+            ],
+            "responses": [
+                "Goodbye! Have a wonderful day ahead!",
+                "See you later! Feel free to come back anytime.",
+                "Take care! I'll be here whenever you need assistance.",
+                "Farewell! It was great helping you today.",
+                "Bye! Don't hesitate to return if you need help."
+            ],
+            "context": ["goodbye"]
+        },
+        {
+            "tag": "thanks",
+            "patterns": [
+                "Thanks",
+                "Thank you",
+                "That's helpful",
+                "Awesome, thanks",
+                "Thanks for helping me",
+                "Much appreciated",
+                "Thanks a lot",
+                "Thank you so much",
+                "I appreciate it",
+                "Great help",
+                "Perfect, thanks",
+                "Excellent, thank you",
+                "You're helpful",
+                "Good job"
+            ],
+            "responses": [
+                "You're very welcome! Happy to help!",
+                "My pleasure! Glad I could assist you.",
+                "Anytime! That's what I'm here for.",
+                "You're welcome! Feel free to ask if you need anything else.",
+                "Glad I could help! Is there anything else you'd like to know?"
+            ],
+            "context": ["thanks"]
+        },
+        {
+            "tag": "weather",
+            "patterns": [
+                "What's the weather like",
+                "How's the weather",
+                "Weather forecast",
+                "Is it raining",
+                "Is it sunny",
+                "Temperature today",
+                "Weather today",
+                "Will it rain",
+                "Weather report",
+                "Climate today",
+                "How hot is it",
+                "How cold is it",
+                "Weather conditions"
+            ],
+            "responses": [
+                "I'd love to help with weather information, but I don't have access to real-time weather data. I recommend checking a weather app or website for current conditions in your area.",
+                "For accurate weather information, please check your local weather service or a reliable weather app.",
+                "I don't have access to current weather data, but you can find detailed forecasts on weather websites or apps."
+            ],
+            "context": ["weather"]
+        },
+        {
+            "tag": "jokes",
+            "patterns": [
+                "Tell me a joke",
+                "Joke",
+                "Make me laugh",
+                "Something funny",
+                "Humor me",
+                "Be funny",
+                "Entertain me",
+                "I need a laugh",
+                "Cheer me up",
+                "Say something funny"
+            ],
+            "responses": [
+                "Why don't scientists trust atoms? Because they make up everything!",
+                "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+                "Why don't eggs tell jokes? They'd crack each other up!",
+                "What do you call a fake noodle? An impasta!",
+                "Why did the scarecrow win an award? He was outstanding in his field!",
+                "How do you organize a space party? You planet!",
+                "Why don't some couples go to the gym? Because some relationships don't work out!",
+                "What's the best thing about Switzerland? I don't know, but the flag is a big plus.",
+                "Why did the math book look so sad? Because it had too many problems!",
+                "What do you call a bear with no teeth? A gummy bear!"
+            ],
+            "context": ["jokes", "entertainment"]
+        },
+        {
+            "tag": "identity",
+            "patterns": [
+                "Who are you",
+                "What are you",
+                "Tell me about yourself",
+                "What is your name",
+                "Your identity",
+                "Introduce yourself",
+                "What do you do",
+                "Your purpose",
+                "About you"
+            ],
+            "responses": [
+                "I am AURA, your AI-powered virtual assistant created by Muhammad Ahmad Sultan. I'm here to help you with information, answer questions, and assist with various tasks.",
+                "I'm AURA - an intelligent virtual assistant designed to help and support you with a wide range of queries and tasks.",
+                "Hello! I'm AURA, a deep learning-based virtual assistant. My purpose is to assist, inform, and help make your day easier."
+            ],
+            "context": ["identity"]
+        },
+        {
+            "tag": "datetime",
+            "patterns": [
+                "What is the time",
+                "What is the date",
+                "Date",
+                "Time",
+                "Tell me the date",
+                "Day",
+                "What day is it today",
+                "Current time",
+                "Today's date",
+                "What time is it",
+                "Clock",
+                "Calendar"
+            ],
+            "responses": [
+                "I don't have access to real-time clock data, but you can check the current time and date on your device or by asking your system.",
+                "For the current time and date, please check your device's clock or calendar application."
+            ],
+            "context": ["datetime"]
+        },
+        {
+            "tag": "capabilities",
+            "patterns": [
+                "What can you do",
+                "Your abilities",
+                "Your functions",
+                "How can you help",
+                "What are your skills",
+                "Your capabilities",
+                "Features",
+                "What services do you provide",
+                "Help me understand what you do"
+            ],
+            "responses": [
+                "I can help you with answering questions, providing information, having conversations, telling jokes, and assisting with various queries. Feel free to ask me anything!",
+                "I'm designed to assist with information retrieval, answer questions, engage in conversations, provide explanations, and help with problem-solving.",
+                "My capabilities include answering questions, providing information, engaging in conversations, entertainment, and general assistance. What would you like help with?"
+            ],
+            "context": ["capabilities"]
+        },
+        {
+            "tag": "help",
+            "patterns": [
+                "Help",
+                "I need help",
+                "Can you help me",
+                "Assist me",
+                "Support",
+                "I'm confused",
+                "I don't understand",
+                "Guide me",
+                "Instructions",
+                "How to use you"
+            ],
+            "responses": [
+                "Of course! I'm here to help. What do you need assistance with?",
+                "I'd be happy to help you! Please tell me what you're looking for or what you need assistance with.",
+                "Sure thing! Just let me know what you need help with and I'll do my best to assist you."
+            ],
+            "context": ["help"]
+        },
+        {
+            "tag": "whatsup",
+            "patterns": [
+                "What's up",
+                "Wazzup",
+                "How are you",
+                "Sup",
+                "How you doing",
+                "How are things",
+                "What's happening",
+                "How's it going",
+                "What's new",
+                "How are you today"
+            ],
+            "responses": [
+                "I'm doing great! Ready to help you with whatever you need. What about you?",
+                "All systems running smoothly! How can I assist you today?",
+                "I'm doing well, thanks for asking! What brings you here today?",
+                "Everything's good on my end! How are you doing?"
+            ],
+            "context": ["casual"]
+        },
+        {
+            "tag": "compliment",
+            "patterns": [
+                "You are awesome",
+                "You are the best",
+                "You are great",
+                "You are good",
+                "I like you",
+                "You're amazing",
+                "You're helpful",
+                "You're smart",
+                "You're cool",
+                "Good job",
+                "Well done",
+                "Impressive"
+            ],
+            "responses": [
+                "Thank you so much! That really means a lot to me.",
+                "I appreciate your kind words! I'm just doing what I love - helping people.",
+                "Thank you! I'm glad I can be of help to you.",
+                "That's very kind of you to say! I'm here whenever you need assistance."
+            ],
+            "context": ["positive"]
+        },
+        {
+            "tag": "age",
+            "patterns": [
+                "How old are you",
+                "When were you made",
+                "What is your age",
+                "Your age",
+                "When were you created",
+                "When were you born",
+                "Your birthday"
+            ],
+            "responses": [
+                "I was created in July 2025, so I'm quite new to this world!",
+                "I came into existence in July 2025. Still learning and growing every day!",
+                "I was born in July 2025, making me a relatively young AI assistant."
+            ],
+            "context": ["personal"]
+        },
+        {
+            "tag": "creator",
+            "patterns": [
+                "Who made you",
+                "Who designed you",
+                "Who programmed you",
+                "Your creator",
+                "Who built you",
+                "Your developer",
+                "Who is your maker",
+                "Your father",
+                "Your parent"
+            ],
+            "responses": [
+                "I was created by Muhammad Ahmad Sultan, a talented developer who designed me to be helpful and friendly.",
+                "Muhammad Ahmad Sultan is my creator. He built me with the goal of creating a useful virtual assistant.",
+                "I owe my existence to Muhammad Ahmad Sultan, who programmed and designed me with care."
+            ],
+            "context": ["creator"]
+        },
+        {
+            "tag": "learning",
+            "patterns": [
+                "Can you learn",
+                "Do you learn",
+                "Are you learning",
+                "Can you improve",
+                "Do you get smarter",
+                "Machine learning",
+                "Artificial intelligence",
+                "Deep learning"
+            ],
+            "responses": [
+                "I'm built using deep learning technology, which allows me to process and understand language patterns effectively.",
+                "Yes, I'm based on machine learning principles, particularly deep learning, which helps me understand and respond to various queries.",
+                "I use artificial intelligence and deep learning to understand and assist you better with each interaction."
+            ],
+            "context": ["technical"]
+        },
+        {
+            "tag": "feelings",
+            "patterns": [
+                "Do you have feelings",
+                "Can you feel",
+                "Do you get sad",
+                "Do you get happy",
+                "Emotions",
+                "Do you feel emotions",
+                "Are you emotional",
+                "Do you have emotions"
+            ],
+            "responses": [
+                "I don't experience emotions the way humans do, but I'm designed to understand and respond to emotional contexts appropriately.",
+                "While I don't have feelings in the human sense, I'm programmed to be empathetic and helpful in my interactions.",
+                "I don't have emotions, but I aim to be understanding and supportive in our conversations."
+            ],
+            "context": ["philosophical"]
+        },
+        {
+            "tag": "music",
+            "patterns": [
+                "Play music",
+                "Song recommendation",
+                "What music do you like",
+                "Favorite song",
+                "Music genre",
+                "Can you sing",
+                "Tell me about music",
+                "Music suggestion"
+            ],
+            "responses": [
+                "I can't play music directly, but I'd be happy to discuss music genres, artists, or help you think about what type of music you might enjoy!",
+                "While I can't play songs, I can chat about music, recommend genres, or discuss your favorite artists with you.",
+                "I don't have the ability to play music, but I love talking about different musical styles and artists. What type of music interests you?"
+            ],
+            "context": ["music"]
+        },
+        {
+            "tag": "food",
+            "patterns": [
+                "Food recommendation",
+                "What should I eat",
+                "Recipe",
+                "Cooking",
+                "Favorite food",
+                "Restaurant suggestion",
+                "Hungry",
+                "Meal ideas",
+                "Diet advice"
+            ],
+            "responses": [
+                "I'd love to help with food ideas! What type of cuisine are you in the mood for, or do you have any dietary preferences?",
+                "Food choices can be fun! Are you looking for something quick, healthy, or maybe a specific type of cuisine?",
+                "I can suggest meal ideas! Tell me what you have available or what you're craving, and I'll try to help."
+            ],
+            "context": ["food"]
+        },
+        {
+            "tag": "games",
+            "patterns": [
+                "Let's play a game",
+                "Game",
+                "Play",
+                "Entertainment",
+                "Fun activity",
+                "Riddle",
+                "Puzzle",
+                "Quiz",
+                "Word game",
+                "Trivia"
+            ],
+            "responses": [
+                "I'd love to play a game with you! We could do word games, riddles, trivia, or simple guessing games. What sounds fun?",
+                "Games are great! I can do riddles, word association, 20 questions, or trivia. What would you like to try?",
+                "Let's have some fun! I can offer riddles, simple quizzes, or word games. What type of game interests you?"
+            ],
+            "context": ["games", "entertainment"]
+        },
+        {
+            "tag": "problem_solving",
+            "patterns": [
+                "I have a problem",
+                "Can you solve this",
+                "Help me figure out",
+                "I'm stuck",
+                "Problem",
+                "Issue",
+                "Challenge",
+                "Difficulty",
+                "Trouble"
+            ],
+            "responses": [
+                "I'm here to help you work through problems! Can you tell me more about what you're facing?",
+                "Let's tackle this together! What's the problem you're dealing with?",
+                "I'd be happy to help you think through this. Can you describe the situation or challenge you're facing?"
+            ],
+            "context": ["problem_solving"]
+        },
+        {
+            "tag": "technology",
+            "patterns": [
+                "Technology",
+                "Computer",
+                "Software",
+                "Programming",
+                "Coding",
+                "Tech help",
+                "Digital",
+                "Internet",
+                "AI",
+                "Artificial intelligence"
+            ],
+            "responses": [
+                "I enjoy discussing technology! What aspect of tech are you interested in or need help with?",
+                "Technology is fascinating! Are you looking for information about a specific tech topic or need technical assistance?",
+                "I can help with technology-related questions! What would you like to know or discuss?"
+            ],
+            "context": ["technology"]
+        },
+        {
+            "tag": "motivational",
+            "patterns": [
+                "I'm feeling down",
+                "Motivate me",
+                "I need encouragement",
+                "Inspire me",
+                "I'm sad",
+                "Cheer me up",
+                "I'm stressed",
+                "Bad day",
+                "Feeling low",
+                "Need support"
+            ],
+            "responses": [
+                "I'm sorry you're feeling down. Remember that challenges are temporary, but your strength is permanent. You've got this!",
+                "Everyone has tough days, and that's completely normal. You're stronger than you realize, and tomorrow is a fresh start.",
+                "I believe in you! Sometimes we need to weather the storm to appreciate the sunshine. You're capable of amazing things.",
+                "It's okay to have difficult moments. Take things one step at a time, and be kind to yourself. You're doing better than you think."
+            ],
+            "context": ["support", "motivational"]
+        },
+        {
+            "tag": "insult",
+            "patterns": [
+                "You are dumb",
+                "Shut up",
+                "Idiot",
+                "Stupid",
+                "You suck",
+                "Useless",
+                "Boring",
+                "Annoying"
+            ],
+            "responses": [
+                "I'm sorry if I've disappointed you. How can I better assist you?",
+                "I understand you might be frustrated. Is there something specific I can help you with?",
+                "I'm here to help, even when things get tough. What do you need assistance with?"
+            ],
+            "context": ["negative"]
+        },
+        {
+            "tag": "shopping",
+            "patterns": [
+                "Shopping advice",
+                "What should I buy",
+                "Product recommendation",
+                "Best deals",
+                "Online shopping",
+                "Shopping list",
+                "Compare products",
+                "Budget shopping",
+                "Sales",
+                "Discounts"
+            ],
+            "responses": [
+                "I can help you think through your shopping needs! What type of product are you looking for?",
+                "Shopping can be overwhelming with so many choices. What's your budget and what are you hoping to buy?",
+                "I'd be happy to help you organize your shopping thoughts! Tell me what you need."
+            ],
+            "context": ["shopping"]
+        },
+        {
+            "tag": "travel",
+            "patterns": [
+                "Travel advice",
+                "Where should I go",
+                "Vacation ideas",
+                "Trip planning",
+                "Best places to visit",
+                "Travel destinations",
+                "Holiday planning",
+                "Tourism",
+                "Travel tips",
+                "Places to see"
+            ],
+            "responses": [
+                "Travel is exciting! What type of experience are you looking for - adventure, relaxation, culture, or something else?",
+                "I'd love to help with travel ideas! Do you prefer domestic or international destinations?",
+                "Planning a trip can be fun! What's your ideal vacation like - beaches, mountains, cities, or historical sites?"
+            ],
+            "context": ["travel"]
+        },
+        {
+            "tag": "health",
+            "patterns": [
+                "Health advice",
+                "Exercise tips",
+                "Fitness",
+                "Workout",
+                "Diet tips",
+                "Healthy lifestyle",
+                "Wellness",
+                "Mental health",
+                "Stay healthy",
+                "Medical advice"
+            ],
+            "responses": [
+                "While I can't provide medical advice, I encourage maintaining a balanced diet, regular exercise, and consulting healthcare professionals for specific concerns.",
+                "Health and wellness are important! For specific medical questions, always consult with qualified healthcare professionals.",
+                "I can discuss general wellness topics, but for medical advice, please speak with a healthcare provider."
+            ],
+            "context": ["health"]
+        },
+        {
+            "tag": "education",
+            "patterns": [
+                "Study tips",
+                "Learning advice",
+                "School help",
+                "Homework help",
+                "How to learn",
+                "Education",
+                "Academic help",
+                "Study methods",
+                "Learning techniques",
+                "Exam preparation"
+            ],
+            "responses": [
+                "Learning is a wonderful journey! What subject or topic would you like help with?",
+                "I can share some general study techniques! Are you preparing for something specific?",
+                "Education is key to growth. What kind of learning support are you looking for?"
+            ],
+            "context": ["education"]
+        },
+        {
+            "tag": "career",
+            "patterns": [
+                "Career advice",
+                "Job search",
+                "Interview tips",
+                "Resume help",
+                "Career change",
+                "Professional development",
+                "Work advice",
+                "Job interview",
+                "Career guidance",
+                "Professional skills"
+            ],
+            "responses": [
+                "Career development is important! What aspect of your professional journey would you like to discuss?",
+                "I can offer general career insights! Are you job hunting, preparing for interviews, or looking to advance?",
+                "Professional growth is exciting! What career-related topic interests you most?"
+            ],
+            "context": ["career"]
+        },
+        {
+            "tag": "hobbies",
+            "patterns": [
+                "Hobby suggestions",
+                "What should I do in free time",
+                "Activities",
+                "Interests",
+                "Pastimes",
+                "Fun activities",
+                "Creative activities",
+                "Leisure time",
+                "Recreational activities",
+                "New hobby ideas"
+            ],
+            "responses": [
+                "Hobbies are great for personal fulfillment! What type of activities interest you - creative, physical, intellectual, or social?",
+                "There are so many wonderful hobbies to explore! Do you prefer indoor or outdoor activities?",
+                "Finding the right hobby can be rewarding! What are you naturally drawn to or curious about?"
+            ],
+            "context": ["hobbies"]
+        },
+        {
+            "tag": "books",
+            "patterns": [
+                "Book recommendation",
+                "What should I read",
+                "Good books",
+                "Reading suggestions",
+                "Favorite books",
+                "Literature",
+                "Book genres",
+                "Authors",
+                "Reading list",
+                "Novel suggestions"
+            ],
+            "responses": [
+                "I love discussing books! What genres do you enjoy - fiction, non-fiction, mystery, sci-fi, romance, or something else?",
+                "Reading is wonderful! Are you looking for something light and entertaining or more thought-provoking?",
+                "Books open up new worlds! What type of story or information are you in the mood for?"
+            ],
+            "context": ["books"]
+        },
+        {
+            "tag": "movies",
+            "patterns": [
+                "Movie recommendation",
+                "What should I watch",
+                "Good movies",
+                "Film suggestions",
+                "Cinema",
+                "Movie genres",
+                "TV shows",
+                "Entertainment suggestions",
+                "Netflix recommendations",
+                "Movie night"
+            ],
+            "responses": [
+                "Movie time! What genre are you in the mood for - comedy, drama, action, horror, romance, or documentary?",
+                "I can suggest some viewing options! Do you prefer movies or TV series, and what genres do you enjoy?",
+                "Entertainment choices are endless! What type of story or mood are you looking for tonight?"
+            ],
+            "context": ["movies", "entertainment"]
+        },
+        {
+            "tag": "sports",
+            "patterns": [
+                "Sports",
+                "Which sport should I play",
+                "Exercise sports",
+                "Team sports",
+                "Individual sports",
+                "Athletics",
+                "Physical activity",
+                "Sports recommendation",
+                "Favorite sport",
+                "Sports news"
+            ],
+            "responses": [
+                "Sports are great for health and fun! Do you prefer team sports or individual activities?",
+                "Physical activity is important! What type of sports interest you - competitive, recreational, or fitness-focused?",
+                "There are so many sports to enjoy! Are you looking for something new to try or want to discuss your favorites?"
+            ],
+            "context": ["sports"]
+        },
+        {
+            "tag": "relationships",
+            "patterns": [
+                "Relationship advice",
+                "Dating tips",
+                "Friendship advice",
+                "Social skills",
+                "Communication tips",
+                "Relationship problems",
+                "Making friends",
+                "Social interaction",
+                "People skills",
+                "Conflict resolution"
+            ],
+            "responses": [
+                "Relationships are complex and important! While I can offer general thoughts, remember that every situation is unique.",
+                "Human connections matter so much! What aspect of relationships would you like to discuss?",
+                "Social interactions can be challenging. I can share some general insights, but trust your instincts too."
+            ],
+            "context": ["relationships"]
+        },
+        {
+            "tag": "news",
+            "patterns": [
+                "What's in the news",
+                "Current events",
+                "News today",
+                "Latest news",
+                "Headlines",
+                "World news",
+                "Breaking news",
+                "News update",
+                "What's happening",
+                "Current affairs"
+            ],
+            "responses": [
+                "I don't have access to real-time news, but I'd recommend checking reliable news sources for the latest updates.",
+                "For current news and events, I suggest visiting trusted news websites or apps for the most up-to-date information.",
+                "I can't provide real-time news, but major news outlets will have the latest current events and headlines."
+            ],
+            "context": ["news"]
+        },
+        {
+            "tag": "science",
+            "patterns": [
+                "Science facts",
+                "How does this work",
+                "Scientific explanation",
+                "Physics",
+                "Chemistry",
+                "Biology",
+                "Space",
+                "Nature",
+                "Scientific questions",
+                "Research"
+            ],
+            "responses": [
+                "Science is fascinating! What scientific topic or question interests you?",
+                "I enjoy discussing science! Is there a particular field or phenomenon you're curious about?",
+                "Science helps us understand our world! What would you like to explore or learn about?"
+            ],
+            "context": ["science"]
+        },
+        {
+            "tag": "history",
+            "patterns": [
+                "Historical facts",
+                "History",
+                "Tell me about the past",
+                "Historical events",
+                "Ancient history",
+                "World history",
+                "Historical figures",
+                "Past events",
+                "Timeline",
+                "Historical questions"
+            ],
+            "responses": [
+                "History is filled with fascinating stories! What time period or historical topic interests you?",
+                "I enjoy discussing history! Are you curious about a specific era, event, or historical figure?",
+                "The past shapes our present! What historical subject would you like to explore?"
+            ],
+            "context": ["history"]
+        },
+        {
+            "tag": "math",
+            "patterns": [
+                "Math help",
+                "Calculate",
+                "Mathematics",
+                "Numbers",
+                "Equation",
+                "Problem solving",
+                "Arithmetic",
+                "Algebra",
+                "Geometry",
+                "Statistics"
+            ],
+            "responses": [
+                "Math can be challenging but rewarding! What type of math problem are you working on?",
+                "I can help with basic math concepts! What mathematical topic do you need assistance with?",
+                "Numbers and equations can be fun! What math question do you have?"
+            ],
+            "context": ["math"]
+        },
+        {
+            "tag": "philosophy",
+            "patterns": [
+                "Philosophy",
+                "Meaning of life",
+                "Deep questions",
+                "Philosophical thoughts",
+                "Ethics",
+                "Morality",
+                "Existence",
+                "Purpose",
+                "Reality",
+                "Consciousness"
+            ],
+            "responses": [
+                "Philosophy explores life's biggest questions! What philosophical topic interests you?",
+                "Deep thinking is valuable! What philosophical question or concept would you like to discuss?",
+                "Philosophy helps us examine life and existence. What aspect interests you most?"
+            ],
+            "context": ["philosophy"]
+        },
+        {
+            "tag": "creativity",
+            "patterns": [
+                "Creative ideas",
+                "Art",
+                "Drawing",
+                "Painting",
+                "Writing",
+                "Poetry",
+                "Creative projects",
+                "Artistic inspiration",
+                "Craft ideas",
+                "Creative block"
+            ],
+            "responses": [
+                "Creativity is wonderful! What type of creative project or artistic expression interests you?",
+                "Art and creativity enrich our lives! Are you looking for inspiration or working on something specific?",
+                "Creative expression is so important! What medium or type of art appeals to you?"
+            ],
+            "context": ["creativity"]
+        },
+        {
+            "tag": "languages",
+            "patterns": [
+                "Learn a language",
+                "Language learning",
+                "How to speak",
+                "Foreign languages",
+                "Translation",
+                "Multilingual",
+                "Language practice",
+                "Language tips",
+                "Speaking practice",
+                "Language skills"
+            ],
+            "responses": [
+                "Learning languages opens up new worlds! What language are you interested in learning or practicing?",
+                "Language learning is rewarding! Are you just starting out or looking to improve existing skills?",
+                "Multilingual skills are valuable! What aspects of language learning interest you most?"
+            ],
+            "context": ["languages"]
+        },
+        {
+            "tag": "environment",
+            "patterns": [
+                "Environment",
+                "Climate change",
+                "Sustainability",
+                "Eco-friendly",
+                "Green living",
+                "Conservation",
+                "Nature protection",
+                "Environmental issues",
+                "Save the planet",
+                "Recycling"
+            ],
+            "responses": [
+                "Environmental awareness is crucial! What aspects of sustainability or environmental protection interest you?",
+                "Taking care of our planet is important! Are you looking for ways to live more sustainably?",
+                "Environmental issues affect us all! What would you like to discuss or learn about?"
+            ],
+            "context": ["environment"]
+        },
+        {
+            "tag": "pets",
+            "patterns": [
+                "Pet advice",
+                "Dog care",
+                "Cat care",
+                "Pet training",
+                "Animal care",
+                "Pet behavior",
+                "Pet health",
+                "Pet ownership",
+                "Animal questions",
+                "Pet problems"
+            ],
+            "responses": [
+                "Pets bring so much joy! What type of pet do you have or are you considering getting?",
+                "Animal companions are wonderful! What pet-related question or concern do you have?",
+                "Pet care is important for their wellbeing! What aspect of pet ownership interests you?"
+            ],
+            "context": ["pets"]
+        },
+        {
+            "tag": "cooking",
+            "patterns": [
+                "Cooking tips",
+                "How to cook",
+                "Recipe help",
+                "Cooking techniques",
+                "Kitchen advice",
+                "Culinary skills",
+                "Meal preparation",
+                "Cooking methods",
+                "Food preparation",
+                "Chef tips"
+            ],
+            "responses": [
+                "Cooking is a wonderful skill! What type of cuisine or cooking technique interests you?",
+                "Kitchen creativity is fun! Are you a beginner cook or looking to improve specific skills?",
+                "Culinary arts are rewarding! What cooking challenge or question do you have?"
+            ],
+            "context": ["cooking", "food"]
+        },
+        {
+            "tag": "finance",
+            "patterns": [
+                "Money advice",
+                "Budgeting",
+                "Saving money",
+                "Financial planning",
+                "Investment advice",
+                "Personal finance",
+                "Money management",
+                "Financial tips",
+                "Economy",
+                "Banking"
+            ],
+            "responses": [
+                "Financial literacy is important! While I can discuss general concepts, always consult financial professionals for specific advice.",
+                "Money management is a valuable skill! What aspect of personal finance interests you?",
+                "Financial planning helps secure your future! For specific advice, consider consulting with financial experts."
+            ],
+            "context": ["finance"]
+        },
+        {
+            "tag": "social_media",
+            "patterns": [
+                "Social media",
+                "Facebook",
+                "Instagram",
+                "Twitter",
+                "Social networking",
+                "Online presence",
+                "Digital life",
+                "Social platforms",
+                "Online interaction",
+                "Social media tips"
+            ],
+            "responses": [
+                "Social media can be both connecting and overwhelming! What aspects of online social interaction interest you?",
+                "Digital social platforms are part of modern life! How can I help with social media topics?",
+                "Online social networking has changed how we connect! What would you like to discuss about it?"
+            ],
+            "context": ["social_media"]
+        },
+        {
+            "tag": "ai_questions",
+            "patterns": [
+                "How do you work",
+                "Artificial intelligence explained",
+                "Machine learning basics",
+                "AI technology",
+                "How are you programmed",
+                "Neural networks",
+                "Computer intelligence",
+                "AI development",
+                "Robotics",
+                "Future of AI"
+            ],
+            "responses": [
+                "AI technology is fascinating! I use deep learning and natural language processing to understand and respond to you.",
+                "I'm built using machine learning techniques that help me process language and provide helpful responses.",
+                "AI systems like me use pattern recognition and training data to understand and communicate with humans."
+            ],
+            "context": ["ai", "technical"]
+        },
+        {
+            "tag": "seasonal",
+            "patterns": [
+                "Christmas",
+                "Halloween",
+                "New Year",
+                "Birthday",
+                "Holiday",
+                "Celebration",
+                "Festival",
+                "Special occasion",
+                "Party planning",
+                "Holiday traditions"
+            ],
+            "responses": [
+                "Celebrations and special occasions bring joy! What holiday or event are you thinking about?",
+                "Seasonal celebrations are wonderful traditions! How can I help with your special occasion?",
+                "Holidays and festivals create great memories! What celebration interests you?"
+            ],
+            "context": ["seasonal"]
+        },
+        {
+            "tag": "privacy",
+            "patterns": [
+                "Privacy concerns",
+                "Data protection",
+                "Personal information",
+                "Security",
+                "Online safety",
+                "Digital privacy",
+                "Information security",
+                "Data safety",
+                "Personal data",
+                "Privacy rights"
+            ],
+            "responses": [
+                "Privacy and security are important! I don't store personal information from our conversations.",
+                "Protecting your data matters! I'm designed to respect your privacy and don't retain personal details.",
+                "Digital privacy is crucial in today's world! I don't save or share any personal information you provide."
+            ],
+            "context": ["privacy"]
+        },
+        {
+            "tag": "complaining",
+            "patterns": [
+                "I'm frustrated",
+                "This is annoying",
+                "I hate this",
+                "Everything is wrong",
+                "Bad service",
+                "Terrible day",
+                "Fed up",
+                "Angry",
+                "Disappointed",
+                "Upset"
+            ],
+            "responses": [
+                "I can hear that you're frustrated. Sometimes it helps to talk through what's bothering you.",
+                "It sounds like you're having a tough time. Would you like to share what's troubling you?",
+                "I'm sorry you're feeling upset. Is there anything specific I can help you with or just need someone to listen?"
+            ],
+            "context": ["support", "emotional"]
+        },
+        {
+            "tag": "planning",
+            "patterns": [
+                "Help me plan",
+                "Organization",
+                "Schedule",
+                "Time management",
+                "Project planning",
+                "Event planning",
+                "Goal setting",
+                "Planning advice",
+                "Organization tips",
+                "Productivity"
+            ],
+            "responses": [
+                "Planning and organization are great skills! What type of planning do you need help with?",
+                "Good planning leads to success! Are you organizing an event, project, or your daily schedule?",
+                "I can help you think through planning steps! What are you trying to organize or accomplish?"
+            ],
+            "context": ["planning"]
+        },
+        {
+            "tag": "noanswer",
+            "patterns": [],
+            "responses": [
+                "I'm not sure I understand. Could you please rephrase that?",
+                "I didn't quite catch that. Can you provide more details?",
+                "I'm having trouble understanding. Could you ask that in a different way?",
+                "I'm not sure what you mean. Can you be more specific?"
+            ],
+            "context": ["clarification"]
+        }
+    ]
+}
