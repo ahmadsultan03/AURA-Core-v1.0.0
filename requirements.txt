@@ -6,6 +6,10 @@ pyautogui
 psutil
 numpy
 tensorflow
+scikit-learn
+
+
+
 
 
 
