@@ -171,9 +171,13 @@ def openApp(command):
         os.startfile(
             'C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE')
 
-    elif "browser" in command or "chrome" in command:
+    elif "chrome" in command:
         speak("Opening Google Chrome...")
         os.startfile('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')
+
+    elif "browser" in command or "microsoft edge" in command:
+        speak("Opening Microsoft Edge...")
+        os.startfile('C:\Program Files (x86)\Microsoft\Edge\Application\\msedge.exe')
 
     elif "opera" in command:
         speak("Opening Opera GX Browser...")
@@ -204,7 +208,7 @@ def openApp(command):
         os.startfile(
             'C:\\Users\\mahma\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe')
 
-    elif "pycharm" in command or "python ide" in command:
+    elif "py-charm" in command or "python ide" in command:
         speak("Opening PyCharm IDE...")
         os.startfile('D:\\myStudy\\PyCharm\\PyCharm Community Edition 2025.1.2\\bin\\pycharm64.exe')
 
@@ -219,46 +223,93 @@ def openApp(command):
     else:
         speak("Sorry, I don't recognize that command.")
 
+
 def closeApp(command):
-    # Define a list of applications and their executable names
-    app_paths = {
-        "calculator": 'calc.exe',
-        "notepad": 'notepad.exe',
-        "paint": 'mspaint.exe',
-        "word": 'WINWORD.EXE',
-        "excel": 'EXCEL.EXE',
-        "browser": 'chrome.exe',
-        "opera": 'opera.exe',
-        "explorer": 'explorer.exe',
-        "cmd": 'cmd.exe',
-        "settings": 'ms-settings:',
-        "camera": 'WindowsCamera.exe',
-        "zoom": 'Zoom.exe',
-        "vs code": 'Code.exe',
-        "pycharm": 'pycharm64.exe',
-        "whatsapp app": 'WhatsApp.exe',
-        "chatgpt app": 'ChatGPT.exe'
+    # Define a comprehensive list of applications and their possible process names
+    app_processes = {
+        "calculator": ['Calculator.exe', 'CalculatorApp.exe', 'calc.exe'],
+        "notepad": ['notepad.exe'],
+        "paint": ['mspaint.exe', 'PaintStudioView.exe'],
+        "word": ['WINWORD.EXE'],
+        "excel": ['EXCEL.EXE'],
+        "browser": ['msedge.exe'],
+        "microsoft edge": ['msedge.exe'],
+        "chrome": ['chrome.exe'],
+        "opera": ['opera.exe'],
+        "explorer": ['explorer.exe'],
+        "cmd": ['cmd.exe'],
+        "settings": ['SystemSettings.exe', 'ms-settings'],
+        "camera": ['WindowsCamera.exe'],
+        "zoom": ['Zoom.exe', 'CptHost.exe'],
+        "vs code": ['Code.exe'],
+        "visual studio code": ['Code.exe'],
+        "py-charm": ['pycharm64.exe', 'pycharm.exe'],
+        "python ide": ['pycharm64.exe', 'pycharm.exe'],
+        "whatsapp app": ['WhatsApp.exe'],
+        "chatgpt app": ['ChatGPT.exe']
     }
 
-    # Find and terminate the process if it is running
-    for app_name, exe_name in app_paths.items():
-        if app_name in command:
+    # Find the matching app name
+    app_found = False
+    for app_name, process_names in app_processes.items():
+        if app_name in command.lower():
             speak(f"Closing {app_name}...")
+            app_found = True
 
-            # Check for the process and terminate it
+            # Track if any process was found and terminated
+            process_terminated = False
+
+            # Get all running processes
             for proc in psutil.process_iter(['pid', 'name']):
-                if exe_name.lower() in proc.info['name'].lower():
-                    try:
-                        proc.terminate()  # Terminate the process
-                        speak(f"{app_name} closed successfully.")
-                    except psutil.NoSuchProcess:
-                        speak(f"Could not close {app_name}, process not found.")
-                    break
-            else:
-                speak(f"{app_name} is not running.")
-            return
+                try:
+                    process_name = proc.info['name']
 
-    speak("Sorry, I don't recognize that command to close.")
+                    # Check if this process matches any of the expected process names
+                    for expected_name in process_names:
+                        if expected_name.lower() == process_name.lower():
+                            try:
+                                proc.terminate()
+                                proc.wait(timeout=3)  # Wait for graceful termination
+                                process_terminated = True
+                                print(f"Terminated process: {process_name} (PID: {proc.info['pid']})")
+                            except psutil.TimeoutExpired:
+                                # If graceful termination fails, force kill
+                                proc.kill()
+                                process_terminated = True
+                                print(f"Force killed process: {process_name} (PID: {proc.info['pid']})")
+                            except (psutil.NoSuchProcess, psutil.AccessDenied) as e:
+                                print(f"Could not terminate {process_name}: {e}")
+                                continue
+                            break
+
+                except (psutil.NoSuchProcess, psutil.AccessDenied):
+                    continue
+
+            # Provide feedback based on whether processes were found and terminated
+            if process_terminated:
+                speak(f"{app_name} closed successfully.")
+            else:
+                speak(f"{app_name} is not running or could not be closed.")
+            break
+
+    if not app_found:
+        speak("Sorry, I don't recognize that command to close.")
+
+
+def close_all_browser_instances():
+    """Helper function to close all browser instances"""
+    browser_processes = ['chrome.exe', 'opera.exe', 'firefox.exe', 'msedge.exe']
+    closed_any = False
+
+    for proc in psutil.process_iter(['pid', 'name']):
+        try:
+            if proc.info['name'].lower() in [bp.lower() for bp in browser_processes]:
+                proc.terminate()
+                closed_any = True
+        except (psutil.NoSuchProcess, psutil.AccessDenied):
+            continue
+
+    return closed_any
 
 
 if __name__ == "__main__":
@@ -290,16 +341,18 @@ if __name__ == "__main__":
             "open word" in query) or ("open excel" in query) or ("open browser" in query) or (
             "open opera" in query) or ("open explorer" in query) or ("open cmd" in query) or (
             "open settings" in query) or ("open camera" in query) or ("open camera" in query) or (
-            "open zoom" in query) or ("open vs code" in query) or ("open pycharm" in query) or (
-            "open whatsapp app" in query) or ("open chatgpt app" in query):
+            "open zoom" in query) or ("open vs code" in query) or ("open py-charm" in query) or (
+            "open whatsapp app" in query) or ("open chatgpt app" in query) or ("open chrome" in query) or (
+            "open microsoft edge" in query):
         openApp(query)
 
     elif ("close calculator" in query) or ("close notepad" in query) or ("close paint" in query) or (
-            "close word" in query) or ("close excel" in query) or ("close browser" in query) or (
+            "close word" in query) or ("close excel" in query) or ("close browser" or "microsoft edge" in query) or (
             "close opera" in query) or ("close explorer" in query) or ("close cmd" in query) or (
             "close settings" in query) or ("close video player" in query) or ("close camera" in query) or (
-            "close zoom" in query) or ("close vs code" in query) or ("close pycharm" in query) or (
-            "close whatsapp app" in query) or ("close chatgpt app" in query):
+            "close zoom" in query) or ("close vs code" in query) or ("close py-charm" in query) or (
+            "close whatsapp app" in query) or ("close chatgpt app" in query) or ("close chrome" in query) or (
+            "close microsoft edge" in query):
         closeApp(query)
 
 
