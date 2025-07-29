@@ -4,6 +4,10 @@ pyaudio
 datetime
 pyautogui
 psutil
+numpy
+tensorflow
+
+
 
 
 
